@@ -149,7 +149,7 @@ The game is simple but the technology behind it is revolutionary:
 
 | Network | Address | Explorer | Status |
 |---------|---------|-----------|--------|
-| Sepolia | `0x79CF4fD6bA7f175f50EbE29F1f773c045b059D05` | [View on Etherscan ↗](https://sepolia.etherscan.io/address/0x79CF4fD6bA7f175f50EbE29F1f773c045b059D05#code) | ✅ Deployed |
+| Sepolia | `0x79CF4fD6bA7f175f50EbE29F1f773c045b059D05` | [View on Etherscan ↗](https://sepolia.etherscan.io/address/0x79CF4fD6bA7f175f50EbE29F1f773c045b059D05#code) | ✅ Verified |
 
 ### Contract Functions
 
