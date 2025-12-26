@@ -1,6 +1,9 @@
 "use client";
 
-import { initSDK, createInstance, SepoliaConfig } from "@zama-fhe/relayer-sdk/web";
+// Dynamic import to avoid SSR issues
+let initSDK: any;
+let createInstance: any;
+let SepoliaConfig: any;
 
 let instance: any = null;
 let isInitialized = false;
@@ -40,6 +43,14 @@ export async function initFhevm(): Promise<any> {
   isInitializing = true;
 
   try {
+    // Dynamically import FHEVM SDK only in browser
+    if (!initSDK || !createInstance || !SepoliaConfig) {
+      const fhevmModule = await import("@zama-fhe/relayer-sdk/web");
+      initSDK = fhevmModule.initSDK;
+      createInstance = fhevmModule.createInstance;
+      SepoliaConfig = fhevmModule.SepoliaConfig;
+    }
+
     // thread: 0 disables multithreading to avoid COOP/COEP header issues
     await initSDK({ thread: 0 });
     instance = await createInstance(SepoliaConfig);

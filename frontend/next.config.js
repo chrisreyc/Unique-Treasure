@@ -18,10 +18,18 @@ const nextConfig = {
           Buffer: ["buffer", "Buffer"],
         })
       );
-      // Define global
+      // Define global and self for browser compatibility
       config.plugins.push(
         new webpack.DefinePlugin({
           "global": "globalThis",
+          "self": "globalThis",
+        })
+      );
+    } else {
+      // Server-side: polyfill self for SSR
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          "self": "globalThis",
         })
       );
     }

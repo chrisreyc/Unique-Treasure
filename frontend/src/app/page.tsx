@@ -5,6 +5,9 @@ import { StatusBar } from "@/components/StatusBar";
 import { TreasureGame } from "@/components/TreasureGame";
 import { initFhevm } from "@/lib/fhe";
 
+// Force dynamic rendering to avoid SSR issues with FHEVM
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   const [fhevmStatus, setFhevmStatus] = useState<"idle" | "initializing" | "ready" | "error">("idle");
 
