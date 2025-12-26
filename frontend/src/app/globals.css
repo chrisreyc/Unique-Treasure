@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&family=Bangers&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-bg: #0D0D1A;
+  --max-fg: #FFFFFF;
+  --max-muted: #2D1B4E;
+  --max-accent: #FF3AF2;
+  --max-secondary: #00F5D4;
+  --max-tertiary: #FFE600;
+  --max-quaternary: #FF6B35;
+  --max-quinary: #7B2FFF;
+}
+
+body {
+  background-color: var(--max-bg);
+  color: var(--max-fg);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Pattern overlays */
+.pattern-dots {
+  background-image: radial-gradient(circle, var(--max-accent) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.pattern-stripes {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 230, 0, 0.05) 10px,
+    rgba(255, 230, 0, 0.05) 20px
+  );
+}
+
+.pattern-mesh {
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(255, 58, 242, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(0, 245, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(123, 47, 255, 0.08) 0%, transparent 60%);
+}
+
+/* Text shadows */
+.text-shadow-single {
+  text-shadow: 2px 2px 0px var(--max-quinary);
+}
+
+.text-shadow-double {
+  text-shadow: 2px 2px 0px var(--max-quinary), 4px 4px 0px var(--max-accent);
+}
+
+.text-shadow-triple {
+  text-shadow: 2px 2px 0px var(--max-quinary), 4px 4px 0px var(--max-accent), 6px 6px 0px var(--max-secondary);
+}
+
+.text-shadow-mega {
+  text-shadow: 4px 4px 0px var(--max-quinary), 8px 8px 0px var(--max-accent), 12px 12px 0px var(--max-secondary);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, var(--max-accent), var(--max-secondary), var(--max-tertiary), var(--max-accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Box shadows */
+.shadow-multi {
+  box-shadow: 8px 8px 0 var(--max-tertiary), 16px 16px 0 var(--max-accent);
+}
+
+.shadow-multi-lg {
+  box-shadow: 12px 12px 0 var(--max-secondary), 24px 24px 0 var(--max-accent), 36px 36px 0 var(--max-tertiary);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(255, 58, 242, 0.5), 0 0 40px rgba(0, 245, 212, 0.3);
+}
+
+.glow-accent-lg {
+  box-shadow: 0 0 40px rgba(255, 58, 242, 0.6), 0 0 80px rgba(255, 230, 0, 0.4), 0 0 120px rgba(123, 47, 255, 0.3);
+}
+
+/* Shimmer effect */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--max-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--max-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--max-secondary);
+}
+
