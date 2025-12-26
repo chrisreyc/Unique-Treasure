@@ -118,7 +118,7 @@ export function TreasureGame() {
       // Refetch result handle
       const { data: handle } = await refetchResult();
       
-      if (!handle || handle === 0n) {
+      if (!handle || handle === BigInt(0)) {
         throw new Error("No result found");
       }
 
@@ -129,7 +129,7 @@ export function TreasureGame() {
       const decrypted = await userDecrypt(handleHex, CONTRACT_ADDRESS, walletClient);
 
       // Result: 1 = win, 0 = lose
-      setResult(decrypted === 1n ? "win" : "lose");
+      setResult(decrypted === BigInt(1) ? "win" : "lose");
       setStep("result");
     } catch (err: any) {
       setError(err.message || "Decryption failed");
