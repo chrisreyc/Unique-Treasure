@@ -11,6 +11,7 @@ const nextConfig = {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         buffer: require.resolve("buffer/"),
+        "@react-native-async-storage/async-storage": false,
       };
       config.plugins.push(
         new webpack.ProvidePlugin({

@@ -82,7 +82,7 @@ export function TreasureGame() {
         abi: CONTRACT_ABI,
         functionName: "play",
         args: [handle, inputProof],
-        gas: 500000n,
+        gas: BigInt(500000),
       });
     } catch (err: any) {
       setError(err.message || "Encryption failed");
